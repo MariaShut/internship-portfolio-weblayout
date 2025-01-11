@@ -103,7 +103,8 @@ body {
 .title,
 .section-title,
 .subtitle,
-.social-media__subtitle {
+.social-media__subtitle,
+.caption {
   margin: 0;
 }
 
@@ -122,8 +123,7 @@ body {
   font-size: var(--fs-h3);
 }
 
-.subtitle-decor_left,
-.subtitle-decor_center {
+.subtitle {
   display: flex;
   align-items: center;
   padding-left: 10px;
@@ -131,16 +131,17 @@ body {
   background-image: url('../img/svg/circle.svg');
   background-repeat: no-repeat;
   background-size: contain;
-}
-
-.subtitle-decor_left {
   background-position: left;
 }
 
-.subtitle-decor_center {
+.subtitle_center-circle {
   background-position: center;
 }
 
+.main {
+  flex-direction: column;
+  row-gap: var(--section-gap);
+}
 
 /* HERO */
 
@@ -177,8 +178,8 @@ body {
 
 .social-media {
   position: absolute;
-  top: 70.5%;
-  left: 2.7%;
+  top: 564px;
+  left: 53px;
   justify-content: space-between;
   align-items: center;
   column-gap: var(--gap);
@@ -219,3 +220,92 @@ body {
   gap: var(--gap);
 }
 
+
+/* ABOUT */
+
+.profile-card {
+  gap: 70px;
+}
+
+.profile-card__image {
+  max-width: 400px;
+}
+
+.profile-card__subtitle {
+  margin-bottom: 11px;
+}
+
+.profile-card__title {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.profile-card__title::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--clr-primary);
+}
+
+.about__descr {
+  margin-bottom: 36px;
+}
+
+.about__descr, 
+.infographic-text {
+  line-height: 152%;
+}
+
+.caption,
+.about__descr {
+  font-size: var(--fs-medium);
+}
+
+.about .profile-card__body {
+  max-width: 570px;
+}
+
+.about__list {
+  flex-wrap: wrap;
+  gap: 20px 50px;
+  justify-content: space-between;
+}
+
+.about__list-item {
+  flex-basis: 260px;
+  padding-top: 3px;
+}
+
+/* infographics */
+
+.infographic-item {
+  padding-left: 60px;
+  background-repeat: no-repeat;
+  background-position: 15px 15px, left top;
+}
+
+.infographic-item_web {
+  background-image: url('../img/svg/icon_web.svg'), url('../img/svg/circle.svg');
+}
+
+.infographic-item_app {
+  background-image: url('../img/svg/icon_app.svg'), url('../img/svg/circle.svg');
+  background-position: 17px 15px, left top;
+}
+
+.infographic-item_design {
+  background-image: url('../img/svg/icon_design.svg'), url('../img/svg/circle.svg');
+}
+
+.infographic-text {
+  margin: 0;
+}
+
+.about__caption {
+  margin-bottom: 6px;
+}
