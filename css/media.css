@@ -64,7 +64,7 @@
     gap: var(--section-gap);
   }
 
-  .inputs-group__input {
+  .form__input-wrapper {
     flex: 1 0 100%;
   }
 

@@ -226,7 +226,7 @@ p {
   fill: var(--clr-primary-dark);
 }
 
-.nav__social .social__link:hover svg {
+.sidebar__social .social__link:hover svg {
   fill: var(--clr-ntrl-min);
 }
 
@@ -331,7 +331,7 @@ p {
   background-position: left center;
 }
 
-.nav__social {
+.sidebar__social {
   justify-content: center;
   margin-top: auto;
 }
@@ -568,6 +568,10 @@ p {
   padding-left: 57px;
 }
 
+.infographics-card__title {
+  margin-bottom: 5px;
+}
+
 
 /* CONTACTS section */
 .contacts__container {
@@ -601,12 +605,13 @@ p {
   gap: 25px;
 }
 
-.inputs-group__input {
+.form__input-wrapper {
   flex: 1;
 }
 
 .form__fieldset {
   padding: 8px;
+  margin-bottom: 10px;
   border: 1px solid var(--clr-ntrl-max);
 }
 
@@ -629,7 +634,6 @@ fieldset.form__fieldset {
 }
 
 .form__error-notification {
-  margin-top: 15px;
   color: red;
 }
 

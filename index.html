@@ -71,7 +71,7 @@
       </ul>
     </nav>
 
-    <ul class="nav__social social flex list-reset">
+    <ul class="sidebar__social social flex list-reset">
       <li class="social__item">
         <a href="#" class="social__link" aria-label="Перейти на страницу вконтакте">
           <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -272,7 +272,7 @@
 
             <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="form flex">
               <div class="inputs-group flex">
-                <div class="inputs-group__input">
+                <div class="form__input-wrapper">
                   <fieldset class="form__fieldset" id="name-fieldset">
                     <legend class="form__legend">Ваше имя</legend>
                     <input type="text" class="form__input" id="name-input" name="name" placeholder="Иван" required>
@@ -280,7 +280,7 @@
                   <div class="form__error-notification" id="name-error"></div>
                 </div>
                 
-                <div class="inputs-group__input">
+                <div class="form__input-wrapper">
                   <fieldset class="form__fieldset" id="email-fieldset">
                     <legend class="form__legend">Ваша почта</legend>
                     <input type="email" class="form__input" id="email-input" name="email" required>
@@ -289,7 +289,7 @@
                 </div>
               </div>
 
-              <div class="inputs-group__input">
+              <div class="form__input-wrapper">
                 <fieldset class="form__fieldset" id="message-fieldset">
                   <legend class="form__legend">Ваше сообщение</legend>
                   <textarea class="form__textarea" id="message-input" name="message" required></textarea>
