@@ -33,25 +33,58 @@ document.addEventListener('DOMContentLoaded', () => {
   const emailFieldset = document.getElementById('email-fieldset');
   const messageFieldset = document.getElementById('message-fieldset');
 
+  const submitButton = document.querySelector('.form__button');
+
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  nameInput.addEventListener("input", () => {
+  function validateName() {
     const trimmedValue = nameInput.value.trim();
-    nameFieldset.classList.toggle("error", trimmedValue === ''); // класс будет добавлен, если true (пустое поле)
+    const isValid = trimmedValue !== '';
 
-    nameInput.value = capitalizeFirstLetter(trimmedValue);
-  })
+    nameFieldset.classList.toggle("error", !isValid);
+    document.getElementById('name-error').textContent = isValid ? '' : 'Поле не может быть пустым. Введите ваше имя.';
+    return isValid;
+  }
 
-  messageInput.addEventListener("input", () => {
-    messageFieldset.classList.toggle("error", messageInput.value.trim() === '');
-  });
-
-  emailInput.addEventListener("input", () => {
+  function validateEmail() {
     const emailValue = emailInput.value.trim();
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValid = emailPattern.test(emailValue);
 
-    emailFieldset.classList.toggle("error", !emailPattern.test(emailValue));
+    emailFieldset.classList.toggle("error", !isValid);
+    document.getElementById('email-error').textContent = isValid ? '' : 'Почта должна содержать символ @, доменное имя и точку после него.';
+    return isValid;
+  }
+
+  function validateMessage() {
+    const isValid = messageInput.value.trim() !== '';
+
+    messageFieldset.classList.toggle("error", !isValid);
+    document.getElementById('message-error').textContent = isValid ? '' : 'Поле не может быть пустым. Укажите сообщение.';
+    return isValid;
+  }
+
+  function updateSubmitButtonState() {
+    const isFormValid = validateName() && validateEmail() && validateMessage();
+    submitButton.disabled = !isFormValid;
+  }
+
+
+  nameInput.addEventListener("blur", () => {
+    nameInput.value = capitalizeFirstLetter(nameInput.value.trim());
+    validateName();
+    updateSubmitButtonState();
+  });
+  
+  emailInput.addEventListener("blur", () => {
+    validateEmail();
+    updateSubmitButtonState();
+  });
+  
+  messageInput.addEventListener("blur", () => {
+    validateMessage();
+    updateSubmitButtonState();
   });
 });

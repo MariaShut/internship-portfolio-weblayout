@@ -628,6 +628,11 @@ fieldset.form__fieldset {
   box-shadow: 0 0 10px red;
 }
 
+.form__error-notification {
+  margin-top: 15px;
+  color: red;
+}
+
 .form__input,
 .form__textarea {
   width: 100%;

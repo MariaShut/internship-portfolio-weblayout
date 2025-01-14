@@ -272,19 +272,30 @@
 
             <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="form flex">
               <div class="inputs-group flex">
-                <fieldset class="form__fieldset inputs-group__input" id="name-fieldset">
-                  <legend class="form__legend">Ваше имя</legend>
-                  <input type="text" class="form__input" id="name-input" name="name" placeholder="Иван" required>
-                </fieldset>
-                <fieldset class="form__fieldset inputs-group__input" id="email-fieldset">
-                  <legend class="form__legend">Ваша почта</legend>
-                  <input type="email" class="form__input" id="email-input"  name="email" required>
-                </fieldset>
+                <div class="inputs-group__input">
+                  <fieldset class="form__fieldset" id="name-fieldset">
+                    <legend class="form__legend">Ваше имя</legend>
+                    <input type="text" class="form__input" id="name-input" name="name" placeholder="Иван" required>
+                  </fieldset>
+                  <div class="form__error-notification" id="name-error"></div>
+                </div>
+                
+                <div class="inputs-group__input">
+                  <fieldset class="form__fieldset" id="email-fieldset">
+                    <legend class="form__legend">Ваша почта</legend>
+                    <input type="email" class="form__input" id="email-input" name="email" required>
+                  </fieldset>
+                  <div class="form__error-notification" id="email-error"></div>
+                </div>
               </div>
-              <fieldset class="form__fieldset" id="message-fieldset">
-                <legend class="form__legend">Ваше сообщение</legend>
-                <textarea class="form__textarea" id="message-input" name="message"></textarea>
-              </fieldset>
+
+              <div class="inputs-group__input">
+                <fieldset class="form__fieldset" id="message-fieldset">
+                  <legend class="form__legend">Ваше сообщение</legend>
+                  <textarea class="form__textarea" id="message-input" name="message" required></textarea>
+                </fieldset>
+                <div class="form__error-notification" id="message-error"></div>
+              </div>
               <button class="form__button btn-primary btn-reset" type="submit">
                 Отправить сообщение
               </button>
