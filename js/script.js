@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Открыть меню
   function openSidebar() {
-      sidebar.classList.add('open');
-      overlay.style.display = 'block';
+    sidebar.classList.add('open');
+    overlay.style.display = 'block';
   }
 
   // Закрыть меню
   function closeSidebar() {
-      sidebar.classList.remove('open');
-      overlay.style.display = 'none';
+    sidebar.classList.remove('open');
+    overlay.style.display = 'none';
   }
 
   burgerMenu.addEventListener('click', openSidebar);
@@ -23,13 +23,35 @@ document.addEventListener('DOMContentLoaded', () => {
   // закрыть меню по клику в любом месте экрана
   overlay.addEventListener('click', closeSidebar);
 
+
   // FORM VALIDATION
   const nameInput = document.getElementById('name-input');
+  const emailInput = document.getElementById('email-input');
+  const messageInput = document.getElementById('message-input');
+
+  const nameFieldset = document.getElementById('name-fieldset');
+  const emailFieldset = document.getElementById('email-fieldset');
+  const messageFieldset = document.getElementById('message-fieldset');
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
   nameInput.addEventListener("input", () => {
-    nameInput.classList.toggle("error", 
-      nameInput.ariaValueMax.trim() === '' // класс будет добавлен, если true (пустое поле)
-    ); 
+    const trimmedValue = nameInput.value.trim();
+    nameFieldset.classList.toggle("error", trimmedValue === ''); // класс будет добавлен, если true (пустое поле)
+
+    nameInput.value = capitalizeFirstLetter(trimmedValue);
   })
 
+  messageInput.addEventListener("input", () => {
+    messageFieldset.classList.toggle("error", messageInput.value.trim() === '');
+  });
+
+  emailInput.addEventListener("input", () => {
+    const emailValue = emailInput.value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    emailFieldset.classList.toggle("error", !emailPattern.test(emailValue));
+  });
 });

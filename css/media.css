@@ -1,0 +1,94 @@
+@media (max-width: 1300px) {
+  .social-media {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .about__list {
+    gap: 20px;
+  }
+
+  .about__list-item {
+    max-width: 85%;
+  }  
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-gap: 40px;
+  }
+
+  .hero__content {
+    max-width: 90%;
+  }
+ 
+  .profile-card__image {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  .profile-card__body {
+    max-width: 100%;
+  }
+
+  .infographics-column {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --fs-h1: 26px;
+    --fs-h2: 24px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .hero {
+    background-image: url('../img/content/hero-background--sm.jpg');
+    background-position: right center;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .profile-card {
+    gap: var(--section-gap);
+  }
+
+  .inputs-group__input {
+    flex: 1 0 100%;
+  }
+
+  .contacts .profile-card__image {
+    display: none;
+  }
+
+  .profile-card__image {
+    max-width: 100%;
+    max-height: 340px;
+    object-fit: cover;
+  }
+
+  .experience__content {
+    padding: 0 20px;
+  }
+
+  .sidebar {
+    width: 250px;
+    padding-left: 20px;
+    padding-right: 25px;
+  }
+
+  .nav__item {
+    font-size: 22px;
+  }
+}

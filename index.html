@@ -6,6 +6,7 @@
   <title>Portfolio</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
   <div class="social-media flex">
@@ -269,20 +270,20 @@
               <h4 class="caption">Или оставьте ваши данные и&nbsp;я&nbsp;сама вам напишу:</h4>
             </div>
 
-            <form action="" class="form flex">
+            <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="form flex">
               <div class="inputs-group flex">
-                <fieldset class="form__fieldset inputs-group__input">
+                <fieldset class="form__fieldset inputs-group__input" id="name-fieldset">
                   <legend class="form__legend">Ваше имя</legend>
-                  <input type="text" class="form__input" name="name" placeholder="Иван">
+                  <input type="text" class="form__input" id="name-input" name="name" placeholder="Иван" required>
                 </fieldset>
-                <fieldset class="form__fieldset inputs-group__input">
+                <fieldset class="form__fieldset inputs-group__input" id="email-fieldset">
                   <legend class="form__legend">Ваша почта</legend>
-                  <input type="email" class="form__input" name="email">
+                  <input type="email" class="form__input" id="email-input"  name="email" required>
                 </fieldset>
               </div>
-              <fieldset class="form__fieldset">
+              <fieldset class="form__fieldset" id="message-fieldset">
                 <legend class="form__legend">Ваше сообщение</legend>
-                <textarea class="form__textarea" name="message"></textarea>
+                <textarea class="form__textarea" id="message-input" name="message"></textarea>
               </fieldset>
               <button class="form__button btn-primary btn-reset" type="submit">
                 Отправить сообщение
